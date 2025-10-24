@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitzCo Pinball</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --primary: #ffadad;
+      --primary-dark: #b71212;
+      --bg-dark: #8694ff;
+      --bg-light: #4e5bb5;
+      --text: #FFFFFF;
+      --text-muted: #F3F3F3;
+      --accent: #ffadad;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      /* ---------- halftone gradient ---------- */
+      --dot-size: 10px;
+      --dot-gap: 20px;
+      --dot-color: rgba(255,255,255,0.08);
+      background-image:
+        radial-gradient(circle at center, var(--dot-color) 0, transparent var(--dot-size)),
+        linear-gradient(var(--bg-dark), var(--bg-dark));
+      background-size: var(--dot-gap) var(--dot-gap);
+    /*  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+      mask-image: linear-gradient(to bottom, #000 60%, transparent); */
+
+    }
+    header {
+      background: white;
+      border-bottom: 4px solid var(--primary-dark);
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background: var(--primary-dark);
+      color: var(--bg-dark);
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--bg-light);
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .card p {
+      color: var(--text-muted);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--bg-light);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      nav {
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <center><img width="33%" src="FitzCoLogo.png"/></center>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#machines">Machines</a>
+      <a href="#contact">Contact</a>
+      <a href="#merchandise">Merchandise</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>FitzCo Pinball is a woman-owned amusement company based in Iowa City, Iowa. </p> 
+      <br>
+      <p>Our mission is to expand the game of pinball in the Iowa City area by making pinball machines available to players wherever possible.</p>
+    </section>
+
+    <section id="events">
+      <h2>Events</h2>
+      <ul style="margin-left: 1.2rem; color: var(--text-muted);">
+        <li><strong>Monthly:</strong> First Wednesdays, $1 Group Matchplay Tournament. No Elimination, 6-9 PM. SpareMe Bowl & Arcade.</li>
+        <li><strong>Quarterly:</strong> Women's Tournaments, $1 Group Matchplay Tournament. No Elimination. 6-9 PM. SpareMe Bowl & Arcade.</li>
+      </ul>
+    </section>
+
+    <section id="machines">
+      <h2>Current Machines</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Dr. Dude</h3>
+          <h4>Bally, 1990</h4>
+          <p>Play your way to become a "SuperDude" in Dr. Dude's Kinetic Clinic.</p>
+          <br>
+          <p>Location: SpareMe Bowl & Arcade</p>
+        </div>
+        <div class="card">
+          <h3>Foo Fighters</h3>
+          <h4>Stern Pinball, 2023</h4>
+          <p>Help the Foo Fighters save the world from the Alien Overlord and rock out along the way.</p>
+          <br>
+          <p>Location: Private Rental</p>
+        </div>
+        <div class="card">
+          <h3>Halloween</h3>
+          <h4>Spooky Pinball, 2021</h4>
+          <p>Death has come to your little pinball machine. Defeat Michael Myers before he kills again!</p>
+          <br>
+          <p>Location: FilmScene at the Chauncey</p>
+        </div>
+        <div class="card">
+          <h3>Hayburners II</h3>
+          <h4>Williams, 1968</h4>
+          <p>A 2 player race to the post on derby day! An electro-mechanical delight.</p>
+          <br>
+          <p>Location: Available</p>
+        </div>
+        <div class="card">
+          <h3>Hollywood Heat</h3>
+          <h4>Gottlieb, 1986</h4>
+          <p>Rethemed as Miami Vice, which fits so well it almost seems intentional... Relive the '80s as they never were!</p>
+          <br>
+          <p>Location: Available</p>
+        </div>
+        <div class="card">
+          <h3>Ice Cold Beer</h3>
+          <h4>Retro Arcade Remake, 2024 (Originally Taito)</h4>
+          <p>Grab a seat and guide a ball up the vertical playfield, avoiding the pitfalls along the way.</p>
+          <br>
+          <p>Location: Available</p>
+        </div>
+        <div class="card">
+          <h3>JAWS</h3>
+          <h4>Stern Pinball, 2024</h4>
+          <p>Go on a shark hunt and capture the terror of Amity Island.</p>
+          <br>
+          <p>Location: SpareMe Bowl & Arcade</p>
+        </div>
+        <div class="card">
+          <h3>Kings of Steel</h3>
+          <h4>Bally, 1984</h4>
+          <p>Enjoy a Test of Champions on the Playfield of Combat.</p>
+          <br>
+          <p>Location: Available</p>
+        </div>
+        <div class="card">
+          <h3>Pulp Fiction</h3>
+          <p>Be a little Fonzie and experience the movie like never before. A love letter to classic pinball layouts with the convenience and excitement of modern play.</p>
+          <br>
+          <p>Location: Coming Soon to FilmScene at the Chauncey</p>
+        </div>
+        <div class="card">
+          <h3>Seawitch</h3>
+          <h4>Stern Electronics, 1980</h4>
+          <p>Knock down the drop target wavebreaks and shoot the rip tide loops to defeat (or become?) the Seawitch!</p>
+          <br>
+          <p>Location: The Green House</p>
+        </div>
+        <div class="card">
+          <h3>Silverball Mania</h3>
+          <h4>Bally 1980</h4>
+          <p>A pinball-themed pinball machine! What will they think of next?</p>
+          <br>
+          <p>Location: Quinton's Bar & Deli, Coralville</p>
+        </div>
+        <div class="card">
+          <h3>Slugfest</h3>
+          <h4>Williams, 1991</h4>
+          <p>2 Player pitch and bat! Multiple pitch options, base-stealing action, and a ramp to send the ball up to the stands for a home run.</p>
+          <br>
+          <p>Location: Quinton's Bar & Deli, Coralville</p>
+        </div>
+        <div class="card">
+          <h3>Star Trek</h3>
+          <h4>Bally, 1979</h4>
+          <p>Join the crew of the Enterprise on a pinball adventure.</p>
+          <br>
+          <p>Location: Available</p>
+        </div>
+        <div class="card">
+          <h3>Star Trek 25th Anniversary</h3>
+          <h4>Data East, 1991</h4>
+          <p>Join the crew of the Enterprise on a more complicated pinball adventure.</p>
+          <br>
+          <p>Location: Available</p>
+        </div>
+        <div class="card">
+          <h3>Star Trek</h3>
+          <h4>Stern Pinball, 2013</h4>
+          <p>Join the young, sexy crew of the Enterprise on the most complicated pinball adventure yet!</p>
+          <br>
+          <p>Location: Quinton's Bar & Deli, Coralville</p>
+        </div>
+        <div class="card">
+          <h3>Star Wars Home Edition Plus</h3>
+          <h4>Stern Pinball, 2025</h4>
+          <p>Destroy the Death Star with Luke, Leia, Han, and the Droids from the comfort of your own home!</p>
+          <br>
+          <p>Location: Private Rental</p>
+        </div>
+        <div class="card">
+          <h3>Tapper</h3>
+          <h4>Bally Midway, 1984</h4>
+          <p>Serve beer to cowboys, sportsfans, punks, and more! Don't let the patrons (or their empty mugs) reach the end of the bar!</p>
+          <br>
+          <p>Location: Available</p>
+        </div>
+        <div class="card">
+          <h3>Venom</h3>
+          <p>Explore the Spiderverse with your new best friend, the symbiote, as you fight your way to Knull, meeting some familiar faces along the way.</p>
+          <br>
+          <p>Location: SpareMe Bowl & Arcade</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Interested in a pinball machine for you business, breakroom, or home? Contact us!</p>
+      <p>Email: <a href="mailto:fitz@fitzcopinball.com" style="color: var(--accent);">fitz@fitzcopinball.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/fitzcopinball/" style="color: var(--accent);">@fitzcopinball</a></p>
+    </section>
+
+    <section id="merchandise">
+      <h2>Merchandise</h2>
+      <p><a href="https://fitzco.myspreadshop.com/" style="color: var(--accent);">Get official FitzCo Merchandise here.</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> FitzCo LLC. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
